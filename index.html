@@ -1,46 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MySpace</title>
-  <style>
-    body {
-      margin: 0;
-      background: #10121c;
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    header {
-      padding: 25px;
-      background: #191d2b;
-    }
+<title>NewBioAI</title>
 
-    main {
-      padding: 100px 20px;
-    }
+<style>
 
-    h1 {
-      font-size: 48px;
-      color: #8b9cff;
-    }
+/* GENERAL */
 
-    p {
-      color: #c5c8d6;
-      font-size: 18px;
-    }
-  </style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f8faf7;
+  color: #263b30;
+  line-height: 1.7;
+}
+
+:root {
+  --green: #244b3b;
+  --dark-green: #19382d;
+  --sage: #829889;
+  --light-green: #eaf0e9;
+  --gold: #b6a276;
+  --white: #ffffff;
+}
+
+/* HEADER */
+
+header {
+  background: white;
+  padding: 18px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e7ece6;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* LOGO */
+
+.logo {
+  width: 42px;
+  height: 42px;
+  background: var(--green);
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo svg {
+  width: 25px;
+  height: 25px;
+}
+
+.brand-name {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: var(--green);
+}
+
+.brand-subtitle {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--sage);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--green);
+  margin-left: 25px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+/* HERO */
+
+.hero {
+  background: var(--green);
+  color: white;
+  padding: 100px 10%;
+  text-align: center;
+}
+
+.hero-label {
+  color: #c6d7c9;
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.2;
+  max-width: 800px;
+  margin: auto;
+  font-weight: 500;
+}
+
+.hero p {
+  color: #d9e4dc;
+  max-width: 620px;
+  margin: 22px auto 0;
+  font-size: 16px;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+  padding: 75px 10%;
+}
+
+.section-label {
+  color: #8a9a8c;
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--green);
+  margin-bottom: 18px;
+}
+
+.about-text {
+  max-width: 760px;
+  color: #627066;
+  font-size: 16px;
+}
+
+/* EVENTS */
+
+.events {
+  background: var(--light-green);
+}
+
+.events-intro {
+  color: #64766a;
+  margin-bottom: 35px;
+}
+
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.event {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e2e9e1;
+}
+
+.event img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.event-content {
+  padding: 24px;
+}
+
+.event-date {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #8a9a8c;
+  margin-bottom: 8px;
+}
+
+.event h3 {
+  color: var(--green);
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.event-speaker {
+  color: #a18b5f;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.event-description {
+  color: #657268;
+  font-size: 14px;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--dark-green);
+  color: #d6e0d7;
+  text-align: center;
+  padding: 30px 15px;
+  font-size: 12px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  header {
+    padding: 15px 5%;
+  }
+
+  .brand-name {
+    font-size: 12px;
+  }
+
+  nav a {
+    margin-left: 10px;
+    font-size: 11px;
+  }
+
+  .hero {
+    padding: 75px 7%;
+  }
+
+  section {
+    padding: 55px 7%;
+  }
+
+  .event-list {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+</style>
 </head>
-<body>
-  <header>
-    <h2>Website</h2>
-  </header>
 
-  <main>
-    <h1>Welcome!</h1>
-    <p>A little corner of the internet.</p>
-  </main>
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+  <div class="brand">
+
+    <div class="logo">
+    <img src="logo.png" alt="Group logo">
+    </div>
+
+    <div>
+      <div class="brand-name">NewBioAI</div>
+      <div class="brand-subtitle">Biology & AI Interest Group</div>
+    </div>
+
+  </div>
+
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT US</a>
+  </nav>
+
+</header>
+
+
+<!-- HOMEPAGE -->
+
+<div class="hero" id="home">
+
+  <div class="hero-label">
+    KNOWLEDGE · PERSPECTIVES · CONNECTIONS
+  </div>
+
+  <h1>
+    Bringing ideas and people together.
+  </h1>
+
+  <p>
+    A space for anyone curious about how AI, especially large language models (LLM), can support biological research.
+  </p>
+
+</div>
+
+
+<!-- ABOUT US -->
+
+<section id="about">
+
+  <div class="section-label">WHO WE ARE</div>
+
+  <h2>About us</h2>
+
+  <p class="about-text">
+    Through regular gatherings and discussions 
+    we create opportunities
+    to share knowledge, gain new perspectives
+    and learn from one another.
+  </p>
+
+</section>
+
+
+<!-- PREVIOUS EVENTS -->
+
+<section class="events" id="events">
+
+  <div class="section-label">PAST EVENTS</div>
+
+  <h2>Previous meetings</h2>
+
+  <p class="events-intro">
+    A selection of previous speakers and discussions.
+  </p>
+
+  <div class="event-list">
+
+
+    <!-- EVENT 1: -->
+
+    <div class="event">
+
+      <img
+        src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=900">
+
+      <div class="event-content">
+
+        <div class="event-date">
+          2026
+        </div>
+
+        <h3>Event title</h3>
+
+        <div class="event-speaker">
+          Speaker Name · Organisation
+        </div>
+
+        <p class="event-description">
+          A short description.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- EVENT 2:-->
+
+    <div class="event">
+
+      <img
+        src="https://images.unsplash.com/photo-1497366811353-6870744d04b2">
+
+      <div class="event-content">
+
+        <div class="event-date">
+          2026
+        </div>
+
+        <h3>Event title</h3>
+
+        <div class="event-speaker">
+          Speaker Name · Organisation
+        </div>
+
+        <p class="event-description">
+          A short description.
+        </p>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  © 2026 NewBioAI
+
+</footer>
+
 </body>
 </html>
